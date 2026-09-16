@@ -1,3 +1,35 @@
+
+import streamlit as st
+
+st.set_page_config(page_title="Inbound Tradebook", layout="wide")  # 기존 코드 유지
+
+# --- 제작자 정보(뷰어 배지) 숨기기 ---
+hide_streamlit_style = """
+    <style>
+    /* GitHub 아이콘 */
+    #GithubIcon {visibility: hidden;}
+
+    /* 상단 메뉴(⋮) 전체 - Deploy 버튼 등 포함해서 숨기고 싶으면 사용 */
+    #MainMenu {visibility: hidden;}
+
+    /* 하단/우상단 "Made with Streamlit" + 프로필 뱃지 (버전별 클래스명 다수 커버) */
+    .viewerBadge_container__1QSob,
+    .viewerBadge_link__1S137,
+    .viewerBadge_text__1JaDK,
+    .styles_viewerBadge__1yB5_,
+    .stAppDeployButton,
+    div[data-testid="stStatusWidget"],
+    div[data-testid="stDecoration"],
+    div[data-testid="stToolbar"] {
+        visibility: hidden;
+        display: none;
+    }
+
+    /* Streamlit 기본 footer */
+    footer {visibility: hidden;}
+    </style>
+"""
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 """
 Inbound Tradebook 웹 대시보드
 ------------------------------------
